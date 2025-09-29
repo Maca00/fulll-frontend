@@ -1,0 +1,31 @@
+.emptyState {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+}
+.emptyState .svgWrapper {
+  border-radius: 500px;
+  background-color: #e1e1e1;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emptyState svg {
+  display: inline-block;
+  width: 100px;
+}
+.emptyState svg path {
+  fill: #c3c3c3;
+}
+
+.emptyState .text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
+  line-height: 1.3;
+}

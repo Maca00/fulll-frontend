@@ -1,0 +1,33 @@
+.results {
+  flex: 1;
+  position: relative;
+}
+
+.results-content {
+  position: absolute;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6px 6px 30px 6px;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  align-items: start;
+  grid-auto-rows: min-content;
+  justify-content: center;
+}
+
+@media (min-width: 435px) {
+  .results-content {
+    grid-template-columns: repeat(3, 100px);
+  }
+}
+
+@media (min-width: 576px) {
+  .results-content {
+    grid-template-columns: repeat(4, 100px);
+  }
+}
