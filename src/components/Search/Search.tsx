@@ -5,10 +5,11 @@ import { useDebounce } from "../../hooks/useDebounce";
 import type { SearchResponse, ApiError, User } from "../../types/types";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import "./Search.css";
 
 function Search() {
   const [searchVal, setSearchVal] = useState<string>("");
-  const [users, setUsers] = useState<User[]>();
+  const [users, setUsers] = useState<User[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [rateLimitReset, setRateLimitReset] = useState<number | null>(null);
@@ -25,7 +26,7 @@ function Search() {
       }
 
       if (!debouncedValue) {
-        setUsers([]);
+        setUsers(null);
         return;
       }
 
@@ -70,7 +71,7 @@ function Search() {
       } catch (err) {
         const error = err as Error;
         setError(error.message || "Unknown error");
-        setUsers([]);
+        setUsers(null);
       } finally {
         setIsLoading(false);
       }
@@ -89,7 +90,11 @@ function Search() {
       {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}
 
-      {!isLoading && !error && users && <Results users={users} />}
+      {!isLoading && !error && (
+        <>
+          <Results users={users} setUsers={setUsers} />
+        </>
+      )}
     </>
   );
 }

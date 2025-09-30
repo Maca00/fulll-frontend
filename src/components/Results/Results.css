@@ -1,3 +1,43 @@
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listHeader button {
+  background-color: transparent;
+  padding: 8px 10px;
+}
+
+.listHeader button + button {
+  margin-left: 5px;
+}
+
+.listHeader .checkmark {
+  background-color: #fff;
+  left: 0;
+  top: 5px;
+}
+
+.listHeader input:indeterminate + .checkmark {
+  background-color: #9933ff;
+}
+.listHeader input:indeterminate + .checkmark:after {
+  display: block;
+  left: 4px;
+  top: 7px;
+  width: 8px;
+  height: 10px;
+  border: solid white;
+  border-width: 2px 0px 0px 0;
+  transform: rotate(0deg);
+}
+
+.listHeader__counter {
+  padding-left: 24px;
+  font-weight: 600;
+}
+
 .results {
   flex: 1;
   position: relative;

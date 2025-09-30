@@ -1,13 +1,25 @@
 import "./Card.css";
-import type { UserItem } from "../../types/types";
+import type { User } from "../../types/types";
 
 interface CardProps {
-  user: UserItem;
+  user: User;
+  selected: boolean;
+  toggleSelect: (user: User) => void;
 }
 
-function Card({ user }: CardProps) {
+function Card({ user, selected, toggleSelect }: CardProps) {
   return (
     <div className="card">
+      <label className="cb_container">
+        <input
+          type="checkbox"
+          checked={selected}
+          onChange={() => toggleSelect(user)}
+          className="card__checkbox"
+        />
+        <span className="checkmark"></span>
+      </label>
+
       <div className="card__avatar">
         <img src={user.avatar_url} alt={`Avatar de ${user.login}`} />
       </div>
