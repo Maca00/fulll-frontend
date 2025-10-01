@@ -3,12 +3,31 @@
   text-align: center;
 }
 
+.searchbar__inputWrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.searchbar__icon svg {
+  height: 24px;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.searchbar__icon svg path {
+  fill: #585858;
+}
+
 .searchbar input {
   width: 100%;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 12px 14px;
+  padding: 12px 14px 12px 36px;
   color: #333;
 }
 .searchbar input:focus {
@@ -16,7 +35,7 @@
 }
 
 @media (min-width: 768px) {
-  .searchbar input {
+  .searchbar__inputWrapper {
     width: 300px;
   }
 }

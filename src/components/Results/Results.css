@@ -2,11 +2,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  color: #333;
+  margin: 0 auto 10px;
 }
 
 .listHeader button {
   background-color: transparent;
-  padding: 8px 10px;
+  padding: 5px 8px;
+}
+
+.listHeader button.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.listHeader button svg path {
+  fill: #444;
 }
 
 .listHeader button + button {
@@ -53,14 +66,14 @@
   padding: 6px 6px 30px 6px;
   display: grid;
   grid-template-columns: repeat(2, 100px);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-column-gap: clamp(20px, 4vw, 30px);
+  grid-row-gap: clamp(20px, 4vw, 30px);
   align-items: start;
   grid-auto-rows: min-content;
   justify-content: center;
 }
 
-@media (min-width: 435px) {
+@media (min-width: 385px) {
   .results-content {
     grid-template-columns: repeat(3, 100px);
   }

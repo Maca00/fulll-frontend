@@ -5,7 +5,6 @@ import { useDebounce } from "../../hooks/useDebounce";
 import type { SearchResponse, ApiError, User } from "../../types/types";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import "./Search.css";
 
 function Search() {
   const [searchVal, setSearchVal] = useState<string>("");

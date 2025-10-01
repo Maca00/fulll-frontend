@@ -19,7 +19,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #9933ff;
   text-decoration: inherit;
 }
 a:hover {
@@ -45,7 +45,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #9933ff;
 }
 button:focus,
 button:focus-visible {
@@ -86,7 +86,7 @@ button:focus-visible {
   background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
+/* When the checkbox is checked, add a purple background */
 .cb_container input:checked ~ .checkmark {
   background-color: #9933ff;
 }
